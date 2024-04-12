@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  heading: string;
+  description: string;
+  image: ImageMetadata;
+  ctaText: string;
+}
+
+const { heading, description, image, ctaText } = Astro.props;
+---
+
+<main class="flex flex-col-reverse md:flex-row">
+  <div class="flex flex-col gap-8">
+    <h1>{heading}</h1>
+    <p>{description}</p>
+    <a>{ctaText}</a>
+  </div>
+  <Image src={image} alt="Hero image" />
+</main>
