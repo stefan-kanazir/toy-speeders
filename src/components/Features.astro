@@ -1,0 +1,31 @@
+---
+import features from "./data/features.json";
+---
+
+<section class="container flex flex-col gap-12">
+  <!-- Features Section Heading -->
+  <div class="flex flex-col items-center">
+    <span class="font-bold text-slate-500 uppercase">Lorem ipsum</span>
+    <h2 class="text-3xl font-bold text-slate-800">
+      What you get with Toy Speeders
+    </h2>
+    <p class="text-slate-600 text-lg w-1/2 text-center mt-4">
+      One of the most professional and comprehensive templates currently on the
+      market. Most starred & forked Astro theme in 2022.
+    </p>
+  </div>
+  <!-- Feature Cards -->
+  <div class="grid md:grid-cols-2 gap-8">
+    {
+      features.map((feature) => (
+        <article class="flex gap-4 bg-slate-200 p-6 rounded-xl">
+          <div class="w-10 h-10 bg-slate-800 rounded-full shrink-0" />
+          <div>
+            <h3 class="font-bold text-xl text-slate-800">{feature.title}</h3>
+            <p class="text-slate-600">{feature.description}</p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
