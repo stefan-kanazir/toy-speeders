@@ -41,32 +41,39 @@ const FEATURES = [
 ] as const;
 ---
 
-<section class="container flex flex-col gap-12 mb-20">
-  <!-- Features Section Heading -->
-  <div class="flex flex-col items-center">
-    <span class="font-bold text-slate-500 uppercase">features</span>
-    <h2 class="text-3xl font-bold text-slate-800 text-center">
-      Sve što dobijate sa Toy Speeders
-    </h2>
-    <p class="text-slate-600 text-lg md:w-1/2 text-center mt-4">
-      One of the most professional and comprehensive templates currently on the
-      market. Most starred & forked Astro theme in 2022.
-    </p>
-  </div>
-  <!-- Feature Cards -->
-  <div class="grid md:grid-cols-2 gap-8">
-    {
-      FEATURES.map((feature) => (
-        <article class="flex gap-4 bg-slate-200 p-6 rounded-xl text-white">
-          <div class="w-10 h-10 bg-slate-800 rounded-full shrink-0 flex items-center justify-center">
-            <Icon name={feature.icon} class="w-5 h-5" />
-          </div>
-          <div>
-            <h3 class="font-bold text-xl text-slate-800">{feature.title}</h3>
-            <p class="text-slate-600">{feature.description}</p>
-          </div>
-        </article>
-      ))
-    }
+<section id="features" class="mb-20 bg-slate-600 py-20">
+  <div class="container flex flex-col gap-12">
+    <!-- Features Section Heading -->
+    <div class="flex flex-col gap-4 items-center">
+      <span
+        class="font-bold text-slate-800 uppercase bg-lime-400 py-2 px-4 rounded-full text-xs"
+        >pogodnosti</span
+      >
+      <h2 class="text-3xl lg:text-5xl font-bold text-white text-center">
+        Sve što dobijate sa Toy Speeders
+      </h2>
+      <p class="text-slate-200 text-lg lg:w-1/2 text-center">
+        One of the most professional and comprehensive templates currently on
+        the market. Most starred & forked Astro theme in 2022.
+      </p>
+    </div>
+    <!-- Feature Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        FEATURES.map((feature) => (
+          <article class="flex flex-col gap-4 md:p-6 rounded-xl lg:hover:bg-slate-700">
+            <div class="w-10 h-10 bg-white rounded-lg shrink-0 flex items-center justify-center ring ring-lime-400">
+              <Icon name={feature.icon} class="w-5 h-5 text-slate-800" />
+            </div>
+            <div>
+              <h3 class="font-bold text-xl lg:text-2xl text-white">
+                {feature.title}
+              </h3>
+              <p class="text-slate-200">{feature.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
   </div>
 </section>
