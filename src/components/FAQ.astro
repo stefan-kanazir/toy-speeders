@@ -1,0 +1,113 @@
+---
+import { Icon } from "astro-icon/components";
+
+const FAQs = [
+  {
+    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer:
+      "Donec aliquam sapien ac nisl blandit malesuada. Nunc et tellus et ligula tristique elementum. Nam sit amet sem a augue sodales semper. Proin blandit diam justo, in dignissim orci accumsan eu.",
+  },
+  {
+    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer:
+      "Donec aliquam sapien ac nisl blandit malesuada. Nunc et tellus et ligula tristique elementum. Nam sit amet sem a augue sodales semper. Proin blandit diam justo, in dignissim orci accumsan eu.",
+  },
+  {
+    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer:
+      "Donec aliquam sapien ac nisl blandit malesuada. Nunc et tellus et ligula tristique elementum. Nam sit amet sem a augue sodales semper. Proin blandit diam justo, in dignissim orci accumsan eu.",
+  },
+  {
+    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer:
+      "Donec aliquam sapien ac nisl blandit malesuada. Nunc et tellus et ligula tristique elementum. Nam sit amet sem a augue sodales semper. Proin blandit diam justo, in dignissim orci accumsan eu.",
+  },
+  {
+    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer:
+      "Donec aliquam sapien ac nisl blandit malesuada. Nunc et tellus et ligula tristique elementum. Nam sit amet sem a augue sodales semper. Proin blandit diam justo, in dignissim orci accumsan eu.",
+  },
+];
+---
+
+<section class="container flex flex-col gap-12 mb-20">
+  <h2 class="text-slate-800 text-3xl font-bold text-center">
+    Često postavljena pitanja
+  </h2>
+
+  <dl>
+    {
+      FAQs.map((faq) => (
+        <div id="accordion" class="">
+          <button
+            id="accordion__button"
+            class="group flex justify-between w-full items-center text-xl font-bold text-slate-800 p-4 aria-expanded:bg-slate-100"
+            type="button"
+            aria-expanded="false"
+          >
+            {faq.question}
+
+            <Icon
+              name="chevron-down"
+              id="accordion__chevron"
+              class="h-4 w-4 shrink-0 transition-transform group-aria-expanded:rotate-180"
+            />
+          </button>
+
+          <div
+            id="accordion__content"
+            class="overflow-hidden max-h-0 transition-all duration-300 ease-in-out px-3"
+          >
+            <p class="text-slate-600 my-3">{faq.answer}</p>
+          </div>
+        </div>
+      ))
+    }
+  </dl>
+</section>
+
+<script>
+  function accordionSetup() {
+    const accordionMenus = document.querySelectorAll(
+      "#accordion",
+    ) as NodeListOf<HTMLElement>;
+
+    accordionMenus.forEach((accordionMenu) => {
+      const accordionButton = accordionMenu.querySelector(
+        "#accordion__button",
+      ) as HTMLElement;
+      const accordionChevron = accordionMenu.querySelector(
+        "#accordion__chevron",
+      ) as HTMLElement;
+      const accordionContent = accordionMenu.querySelector(
+        "#accordion__content",
+      ) as HTMLElement;
+
+      if (accordionButton && accordionContent && accordionChevron) {
+        accordionButton.addEventListener("click", () => {
+          if (!accordionMenu.classList.contains("active")) {
+            // if accordion is currently closed, so open it
+            accordionMenu.classList.add("active");
+            accordionButton.setAttribute("aria-expanded", "true");
+
+            // set max-height to the height of the accordion content
+            // this makes it animate properly
+            accordionContent.classList.remove("hidden");
+            accordionContent.style.maxHeight =
+              accordionContent.scrollHeight + "px";
+          } else {
+            // accordion is currently open, so close it
+            accordionMenu.classList.remove("active");
+            accordionButton.setAttribute("aria-expanded", "false");
+
+            // set max-height to the height of the accordion content
+            // this makes it animate properly
+            accordionContent.style.maxHeight = "0px";
+          }
+        });
+      }
+    });
+  }
+
+  accordionSetup();
+</script>
