@@ -1,5 +1,44 @@
 ---
-import features from "./data/features.json";
+import { Icon } from "astro-icon/components";
+
+const FEATURES = [
+  {
+    title: "Digitalno uputstvo",
+    description:
+      "Naša digitalna rešenja omogućavaju korisnicima da brzo pregledaju jednostavne instrukcije sastavljanja.",
+    icon: "file",
+  },
+  {
+    title: "Preciznost izrade",
+    description:
+      "Svaki model automobila u našoj kolekciji je detaljno obrađen kako bi se osigurala maksimalna verodostojnost originala.",
+    icon: "ruler",
+  },
+  {
+    title: "Kontinuirano osvežavanje asortimana",
+    description:
+      "Redovno ažuriramo naš asortiman igracaka da bismo obuhvatili najnovije trendove i modele automobila.",
+    icon: "refresh",
+  },
+  {
+    title: "Bezbednost na prvom mestu",
+    description:
+      "Svi naši proizvodi su testirani i sigurni za upotrebu, čime pružamo igračku koja je pogodna za sve uzraste.",
+    icon: "shield",
+  },
+  {
+    title: "Raznovrsna ponuda",
+    description:
+      "U Toy Speeders-u imamo veliki asortiman modela automobila, od klasičnih i sportskih vozila pa do terenskih vozila.",
+    icon: "car",
+  },
+  {
+    title: "Dostupnost i podrška",
+    description:
+      "Uvek smo tu da odgovorimo na sva vaša pitanja i pomognemo vam u odabiru savršenih igračaka.",
+    icon: "email",
+  },
+] as const;
 ---
 
 <section class="container flex flex-col gap-12 mb-20">
@@ -17,9 +56,11 @@ import features from "./data/features.json";
   <!-- Feature Cards -->
   <div class="grid md:grid-cols-2 gap-8">
     {
-      features.map((feature) => (
-        <article class="flex gap-4 bg-slate-200 p-6 rounded-xl">
-          <div class="w-10 h-10 bg-slate-800 rounded-full shrink-0" />
+      FEATURES.map((feature) => (
+        <article class="flex gap-4 bg-slate-200 p-6 rounded-xl text-white">
+          <div class="w-10 h-10 bg-slate-800 rounded-full shrink-0 flex items-center justify-center">
+            <Icon name={feature.icon} class="w-5 h-5" />
+          </div>
           <div>
             <h3 class="font-bold text-xl text-slate-800">{feature.title}</h3>
             <p class="text-slate-600">{feature.description}</p>
