@@ -6,6 +6,10 @@ export default {
       center: true,
       padding: "2em",
     },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1240px",
+    },
   },
-  plugins: [],
 };

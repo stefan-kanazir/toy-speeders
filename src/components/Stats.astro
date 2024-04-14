@@ -1,0 +1,36 @@
+---
+const STATS = [
+  {
+    label: "4*",
+    description: "Lokacije u Beogradu",
+  },
+  {
+    label: "100+",
+    description: "Zadovoljnih korisnika",
+  },
+  {
+    label: "12",
+    description: "Različitih modela",
+  },
+];
+---
+
+<section class="container mb-24">
+  <h2 class="text-3xl text-center font-bold text-slate-800">
+    Lorem ipsum dolor sit amet
+  </h2>
+  <p class="text-slate-600 text-center mb-8">
+    Lorem ipsum dolor sit amet consect adipisicing possimus.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    {
+      STATS.map((stat) => (
+        <div class="bg-slate-100 md:hover:bg-slate-50 p-6 rounded-lg flex flex-col gap-2 border-2 border-slate-200">
+          <h3 class="text-5xl font-bold text-slate-800">{stat.label}</h3>
+          <p class="text-slate-600">{stat.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
