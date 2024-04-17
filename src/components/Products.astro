@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+
+import E36 from "../assets/images/bmw-m3-e36.webp";
+import E30 from "../assets/images/bmw-m3-e30.webp";
+import PorschePink from "../assets/images/porsche-gt3-rs-pink.webp";
+import PorscheRed from "../assets/images/porsche-gt3-rs-red.webp";
+import LandRover from "../assets/images/land-rover-defender.webp";
+import McLaren from "../assets/images/mclaren-720s.webp";
+import Audi from "../assets/images/audi-rs6.webp";
+
+const products = [
+  {
+    image: E36,
+    name: "BMW M3 - e36",
+  },
+  {
+    image: PorschePink,
+    name: "Porsche GT3 RS - Pink",
+  },
+  {
+    image: McLaren,
+    name: "McLaren 720s",
+  },
+  {
+    image: E30,
+    name: "BMW M3 - e30",
+  },
+  {
+    image: LandRover,
+    name: "Land Rover - Defender",
+  },
+  {
+    image: PorscheRed,
+    name: "Porsche GT3 RS - Red",
+  },
+  {
+    image: Audi,
+    name: "Audi RS6",
+  },
+];
+---
+
+<section
+  class="w-full overflow-hidden inline-flex flex-nowrap mb-24 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]"
+>
+  <ul
+    class="products-list flex items-center justify-center md:justify-start animate-infinite-scroll"
+  >
+    {
+      products.map((product) => (
+        <li class="bg-slate-200 h-52 w-52 md:h-80 md:w-80 rounded-xl mx-4 overflow-hidden">
+          <Image
+            src={product.image}
+            alt={product.name}
+            class="hover:scale-110 duration-300 ease-out"
+          />
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<script>
+  const productsList = document.querySelector(".products-list") as HTMLElement;
+
+  const clonedList = productsList.cloneNode(true) as HTMLElement;
+  clonedList.setAttribute("aria-hidden", "true");
+  productsList.insertAdjacentElement("afterend", clonedList);
+
+  function handleScroll() {
+    if (
+      productsList.scrollLeft >=
+      productsList.scrollWidth - productsList.clientWidth
+    ) {
+      // If scrolled to the end, append the cloned list after the original list
+      productsList.appendChild(clonedList.cloneNode(true));
+    }
+  }
+
+  productsList.addEventListener("scroll", handleScroll);
+</script>

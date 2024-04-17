@@ -11,5 +11,14 @@ export default {
       md: "768px",
       lg: "1240px",
     },
+    animation: {
+      "infinite-scroll": "infinite-scroll 30s linear infinite",
+    },
+    keyframes: {
+      "infinite-scroll": {
+        from: { transform: "translateX(0)" },
+        to: { transform: "translateX(-100%)" },
+      },
+    },
   },
 };
