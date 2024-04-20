@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import "../styles/main.css";
 
 interface Props {
   title: string;
@@ -17,6 +18,42 @@ const { title, description } = Astro.props;
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Preload fonts -->
+    <link
+      rel="preload"
+      href="/fonts/space-grotesk-300.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/space-grotesk-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/space-grotesk-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/space-grotesk-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/space-grotesk-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -26,50 +63,3 @@ const { title, description } = Astro.props;
     <Footer />
   </body>
 </html>
-
-<style is:global>
-  @font-face {
-    font-family: "SpaceGrotesk";
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: url(/fonts/space-grotesk-300.woff2) format("woff2");
-  }
-
-  @font-face {
-    font-family: "SpaceGrotesk";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(/fonts/space-grotesk-400.woff2) format("woff2");
-  }
-
-  @font-face {
-    font-family: "SpaceGrotesk";
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url(/fonts/space-grotesk-500.woff2) format("woff2");
-  }
-
-  @font-face {
-    font-family: "SpaceGrotesk";
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url(/fonts/space-grotesk-600.woff2) format("woff2");
-  }
-
-  @font-face {
-    font-family: "SpaceGrotesk";
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url(/fonts/space-grotesk-700.woff2) format("woff2");
-  }
-
-  html {
-    scroll-behavior: smooth;
-    font-family: "SpaceGrotesk";
-  }
-</style>
