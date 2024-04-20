@@ -5,10 +5,12 @@ const year = new Date().getFullYear();
 
 const socialLinks = [
   {
+    label: "Instagram",
     href: "https://www.instagram.com/toy_speeders",
     icon: "instagram",
   },
   {
+    label: "TikTok",
     href: "https://www.tiktok.com/@toy_speeders",
     icon: "tiktok",
   },
@@ -24,7 +26,11 @@ const socialLinks = [
     <div class="flex gap-4">
       {
         socialLinks.map((link) => (
-          <a href={link.href} target="_blank">
+          <a
+            href={link.href}
+            target="_blank"
+            aria-label={`${link.label} - toy_speeders`}
+          >
             <Icon name={link.icon} class="w-5 h-5 text-white" />
           </a>
         ))

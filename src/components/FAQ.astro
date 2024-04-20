@@ -40,11 +40,10 @@ const FAQs = [
   <dl>
     {
       FAQs.map((faq) => (
-        <div id="accordion" class="border-t">
+        <div class="accordion border-t">
           <dt>
             <button
-              id="accordion__button"
-              class="group flex gap-4 text-left justify-between w-full items-center text-lg md:text-xl font-medium text-slate-800 py-6"
+              class="accordion__button group flex gap-4 text-left justify-between w-full items-center text-lg md:text-xl font-medium text-slate-800 py-6"
               type="button"
               aria-expanded="false"
             >
@@ -52,16 +51,12 @@ const FAQs = [
 
               <Icon
                 name="chevron-down"
-                id="accordion__chevron"
-                class="h-7 w-7 shrink-0 transition-transform group-aria-expanded:rotate-180"
+                class="accordion__chevron h-7 w-7 shrink-0 transition-transform group-aria-expanded:rotate-180"
               />
             </button>
           </dt>
 
-          <dd
-            id="accordion__content"
-            class="overflow-hidden max-h-0 transition-all duration-300 ease-in-out px-3"
-          >
+          <dd class="accordion__content overflow-hidden max-h-0 transition-all duration-300 ease-in-out px-3">
             <p class="text-slate-600 mb-6">{faq.answer}</p>
           </dd>
         </div>
@@ -73,18 +68,18 @@ const FAQs = [
 <script>
   function accordionSetup() {
     const accordionMenus = document.querySelectorAll(
-      "#accordion",
+      ".accordion",
     ) as NodeListOf<HTMLElement>;
 
     accordionMenus.forEach((accordionMenu) => {
       const accordionButton = accordionMenu.querySelector(
-        "#accordion__button",
+        ".accordion__button",
       ) as HTMLElement;
       const accordionChevron = accordionMenu.querySelector(
-        "#accordion__chevron",
+        ".accordion__chevron",
       ) as HTMLElement;
       const accordionContent = accordionMenu.querySelector(
-        "#accordion__content",
+        ".accordion__content",
       ) as HTMLElement;
 
       if (accordionButton && accordionContent && accordionChevron) {
