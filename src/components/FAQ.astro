@@ -1,33 +1,100 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const FAQs = [
+const FAQs: { question: string; answer: string }[] = [
   {
-    question: "Da li su igračke na sklapanje prikladne za poklone?",
+    question: "Šta ukoliko izgubim deo igračke?",
     answer:
-      "Naše igračke na sklapanje predstavljaju idealan poklon za različite pogodnosti, poput rođendana, praznika ili za posebne prilike. One potiču kreativnost i maštu i idealan su poklon za ljubitelje automobila svih uzrasta.",
-  },
-  {
-    question: "Šta se dešava ako izgubim delove igračke?",
-    answer:
-      "Ako izgubite deo vaše igračke na sklapanje, preporučujemo da se obratite nama. Zahvaljujući našem iskustvu, možda ćemo imati odgovarajući zamenski deo na zalihama.",
+      "Ako izgubite deo igračke Toy Speeders, kontaktirajte nas putem emaila toyspeeders@gmail.com.",
   },
   {
     question:
-      "Da li sve igračke na sklapanje dolaze sa delovima potrebnim za montažu?",
-    answer:
-      "Da, sve naše igračke na sklapanje dolaze sa svim delovima potrebnim za montažu. Uvek proveravamo da li su svi delovi pravilno zapakovani i bezbedni za transport.",
+      "Šta raditi ako vending mašina ne izda Toy Speeders autić nakon uplate?",
+    answer: "Kontaktirajte nas putem emaila toyspeeders@gmail.com.",
   },
   {
-    question: "Koliko su trajne igračke na sklapanje?",
+    question: "Kako mogu kontaktirati podršku za kupce?",
     answer:
-      "Uz odgovarajuću pažnju, naše igračke na sklapanje mogu trajati godinama. One su napravljene od visokokvalitetnih materijala i dizajnirane su da budu izdržljive.",
+      "Korisničku podršku možete kontaktirati putem emaila toyspeeders@gmail.com.",
+  },
+  {
+    question: "Nisam dobio uputstvo za slaganje.",
+    answer:
+      "4. Ukoliko niste dobili uputstvo za korišćenje javite nam se putem mejla toyspeeders@gmail.com. U predelu subject navedite naziv proizvoda (naznačen na prednjoj strain kutije ispod starosnog ograničenja).",
+  },
+  {
+    question: "Koja je preporucena starost za igru sa Toy Speeders auticima?",
+    answer:
+      "Preporučena starosna granica za bezbedno korišćenje Toy Speeders autića je za decu I osobe starije od 6 godina.",
+  },
+  {
+    question: "Mogu li da kupim više igračaka odjednom?",
+    answer:
+      "Iz bezbednosnih razloga trenutno je moguće kupiti samo jedan proizvod po transakciji.",
+  },
+  {
+    question: "Da li vending mašine primaju novac?",
+    answer:
+      "Toy Speeders vending mašine prihvataju kreditne, debitne kartice, kao i mobilne načine plaćanja.",
+  },
+  {
+    question: "Gde mogu da skeniram račun?",
+    answer:
+      "Račun za Toy Speeders autiće možete skenirati na ekranu vending masine prilikom odobrene transakcije.",
+  },
+  {
+    question: "Kada je dostupna kupovina?",
+    answer:
+      "Kupovina Toy Speeders autića je moguća 24/7 putem naših vending mašina, kao I online narudžbine koje možete izvršiti u bilo koje doba putem naše web Instagram stranice.",
+  },
+
+  {
+    question: "Šta da radim ako vending masina nije u funkciji?",
+    answer:
+      "Ako Toy Speeders vending mašina trenutno nije u funkciji, molimo vas da prijavite problem putem broja telefona ili emaila navedenog na vending mašini.",
+  },
+
+  {
+    question: "Mašina mi je izbacila pogrešan artikal?",
+    answer:
+      "Ako Toy Speeders vending mašina izda pogrešan artikal, kontaktirajte korisničku podršku sa informacijama o transakciji i pogrešnom artiklu za zamenu ili povrat.",
+  },
+  {
+    question: "Da li su Toy Speeders autići bezbedni za decu?",
+    answer:
+      "Toy Speeders autići zadovoljavaju sve važeće sigurnosne standarde i propise za dečije igračke, uključujući CE certifikat.",
   },
   {
     question:
-      "Da li svi modeli automobila na sklapanje imaju digitalna uputstva?",
+      "Da li Toy Speeders autići dolaze sa instrukcijama na više jezika?",
     answer:
-      "Svi modeli koje prodajemo dolaze sa kompletnim digitalnim uputstvom koje će olakšati proces sklapanja.",
+      "Toy Speeders autići dolaze sa slikovitim uputstvom za upotrebu kako bi bilo što jednostavnije za upotrebu.",
+  },
+  {
+    question: "Da li su Toy Speeders autići ekološki prihvatljivi?",
+    answer:
+      "Toy Speeders autići ispunjavaju ekološke standarde i napravljeni su od ekološki prihvatljivih materijala.",
+  },
+  {
+    question:
+      "Gde mogu pronaći informacije o najnovijim izdanjima Toy Speeders autića?",
+    answer:
+      "Najnovije informacije o izdanjima Toy Speeders autića možete pronaći na našim društvenim mrežama @toyspeeders.",
+  },
+  {
+    question: "Da li mogu birati model autica u vending mašini?",
+    answer:
+      "U Toy Speeders vending mašinama možete odabrati specifičan model autića, u zavisnosti od dostupnosti.",
+  },
+  {
+    question: "Koje sigurnosne standarde ispunjavaju Toy Speeders autići?",
+    answer:
+      "Toy Speeders autići ispunjavaju sve relevantne sigurnosne standarde i certifikate, uključujući CE certifikat.",
+  },
+  {
+    question: "Šta ako je proizvod iz vending mašine oštećen?",
+    answer:
+      "Ako je Toy Speeders autić kupljen iz vending mašine oštećen, molimo vas da se obratite korisničkoj podršci sa slikom oštećenog proizvoda i računom za zamenu ili povrat.",
   },
 ];
 ---
